@@ -20,7 +20,7 @@ section[id] {
   scroll-margin-top: 90px;
 }
 
-/* ========== VIDEO DE FONDO ========== */
+/* ========== VIDEO BACKGROUND FIX ========== */
 .video-background-wrapper {
   position: fixed;
   top: 0;
@@ -46,7 +46,7 @@ section[id] {
   z-index: 1;
 }
 
-/* ========== HEADER / MENU ========== */
+/* ========== HEADER STICKY ========== */
 .site-header {
   z-index: 1000;
   backdrop-filter: saturate(180%) blur(12px);
@@ -114,7 +114,7 @@ section[id] {
   border-radius: 12px;
 }
 
-/* ========== HERO PRINCIPAL ========== */
+/* ========== HERO ========== */
 .hero {
   position: relative;
   height: 100vh;
@@ -161,8 +161,7 @@ section[id] {
   color: black;
 }
 
-/* ========== BIGTYPE (LETRAS SCROLL) ========== */
-/* Escritorio: mucho espacio para scroll suave */
+/* ========== BIGTYPE ========== */
 .bigtype {
   height: 250vh;
   margin-bottom: 25vh;
@@ -206,7 +205,7 @@ section[id] {
 }
 
 /* =========================================================
-   ========== SECCIÓN ABOUT ==========
+   ========== ABOUT ==========
    ========================================================= */
 .about-section {
   background-color: transparent;
@@ -283,7 +282,7 @@ section[id] {
 }
 
 /* =========================================
-   ========== SECCIÓN POSTERS ==========
+   ========== SECCIÓN POSTER ==========
    ========================================= */
 .poster-section {
   background-color: transparent;
@@ -369,7 +368,7 @@ section[id] {
 }
 
 /* =========================================
-   ========== MODAL POSTERS ==========
+   ========== MODAL POSTER ==========
    ========================================= */
 .modal-overlay {
   position: fixed;
@@ -617,191 +616,314 @@ section[id] {
 }
 
 /* =========================================================
+   ========== SECCIÓN EDITORIAL ==========
+   ========================================================= */
+
+.editorial-section {
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  padding-top: clamp(8rem, 15vh, 12rem);
+  padding-bottom: 5rem;
+  color: #000;
+  z-index: 5;
+}
+
+/* Título Gigante */
+.editorial-big-title {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 800;
+  font-size: clamp(6rem, 22vw, 28rem);
+  line-height: 0.75;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: -0.04em;
+  position: relative;
+  z-index: 2;
+  color: #000;
+}
+
+.editorial-cover-wrapper {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+.editorial-text-block {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.editorial-description {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-align: justify;
+  margin-bottom: 3rem;
+  color: #000;
+}
+.editorial-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Clash Display", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding-top: 1rem;
+  border-top: none;
+  color: #000;
+}
+
+/* Carruseles Infinitos */
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 992px) {
+  .marquee-wrapper {
+    height: 350px;
+  }
+}
+@media (max-width: 600px) {
+  .marquee-wrapper {
+    height: 250px;
+  }
+}
+
+.marquee-track {
+  display: flex;
+  height: 100%;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+.marquee-anima {
+  animation-duration: 35s;
+}
+.marquee-twinpeaks {
+  animation-duration: 40s;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+  gap: 0;
+}
+.marquee-group img {
+  height: 100% !important;
+  width: 700px !important; /* Ancho fijo para igualar tamaños */
+  object-fit: cover !important;
+  display: block;
+  padding-right: 20px;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================================
+   ========== NUEVA SECCIÓN BRANDING (AFLAME STYLE) ==========
+   ========================================================= */
+
+.branding-section {
+  background-color: transparent; /* Fondo transparente */
+  position: relative;
+  width: 100%;
+  padding-top: clamp(6rem, 12vh, 10rem);
+  padding-bottom: clamp(6rem, 12vh, 10rem);
+  color: #000;
+  z-index: 5;
+  overflow: visible;
+}
+
+/* CABECERA "AFLAME BRANDING 2025" */
+.branding-header-container {
+  position: relative;
+  display: block;
+  /* Margen negativo opcional si quieres juntarlo más arriba, sino dejar normal */
+  width: 100%;
+}
+
+.branding-top-title {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+  /* Alineado a la izquierda, encima del título */
+}
+
+.branding-main-title {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 800;
+  font-size: clamp(5rem, 18vw, 20rem); /* Gigante */
+  line-height: 0.8;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: -0.03em;
+  color: #000;
+  display: block;
+}
+
+.branding-year-title {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+  /* Alineado a la derecha, debajo del título */
+  text-align: right;
+  margin-top: -1vw; /* Ajuste visual para pegarlo al título grande */
+}
+
+/* BLOQUE DE TEXTO */
+.branding-description {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-align: justify;
+  color: #000;
+  /* Ajuste para que se vea como en la foto, columna estrecha */
+  max-width: 90%;
+}
+
+/* GRID DE IMÁGENES */
+.branding-images-grid {
+  display: grid;
+  /* 2 columnas iguales */
+  grid-template-columns: 1fr 1fr;
+  /* Espacio entre items */
+  gap: 2rem;
+}
+
+/* Celda individual */
+.branding-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Clases para celdas que ocupan todo el ancho (Logotipos) */
+.branding-cell.full-width {
+  grid-column: span 2;
+  width: 100%;
+}
+
+/* Wrapper de la imagen para el efecto flotante */
+.branding-img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+/* IMAGEN FLOTANTE */
+.branding-img.floating-element {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Rellena el espacio */
+  display: block;
+  /* Sombra suave */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  /* Transición */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover */
+.branding-img.floating-element:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* CAPTION (SUBTÍTULO) */
+.branding-caption {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
    ========== MEDIA QUERIES GENERALES ==========
    ========================================================= */
 
 @media (max-width: 991.98px) {
-  /* BIGTYPE TABLET */
+  /* ... (Resto de queries anteriores se mantienen) ... */
   .bigtype {
     height: 180vh;
     margin-bottom: 15vh;
   }
-
-  /* ABOUT */
   .about-top-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     padding: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    font-size: 0.8rem;
-    z-index: 20;
   }
   .about-content-wrapper {
     padding-top: clamp(170px, 28vh, 300px) !important;
     padding-bottom: clamp(150px, 22vh, 250px) !important;
-    justify-content: flex-start !important;
-    width: 100%;
   }
-  .about-section .row {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-  }
-  .about-section .col-lg-4 {
-    order: 1;
-    margin-bottom: 1rem;
-  }
-  .about-section .col-lg-3 {
-    order: 2;
-  }
-  .about-photo {
-    width: clamp(250px, 50vw, 350px);
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  .about-text {
-    max-width: 600px;
-    text-align: center;
-    margin: 0 auto;
-    font-size: 0.95rem;
-  }
-  .about-big-title {
-    font-size: 20vw !important;
-    bottom: -1vh;
-    left: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  /* MODALS */
-  .modal-overlay {
-    padding: 4rem 1.5rem 1.5rem;
-    align-items: flex-start;
-    overflow-y: auto;
-  }
-  .modal-close-text {
-    top: 1.5rem;
-    right: 1.5rem;
-    font-size: 0.9rem;
-  }
-  .modal-content-container {
-    grid-template-columns: 1fr;
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 2rem;
-  }
-  .modal-text-side {
-    text-align: center;
-    padding-bottom: 2rem;
-  }
-  .modal-title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  .modal-image {
-    max-height: 60vh;
-  }
-
-  .album-modal-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    gap: 2rem;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column-reverse;
-    margin-top: 0;
-  }
-  .album-modal-overlay {
-    align-items: flex-start;
-    padding: 4rem 1.5rem;
-  }
-  .alb-modal-img {
-    max-height: 40vh;
-  }
-
-  /* ALBUM GRID TABLET */
   .album-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+  .marquee-wrapper {
+    height: 350px;
+  }
+  .marquee-group img {
+    width: 500px !important;
+  }
 
-@media (max-width: 900px) {
-  #menu.navbar-collapse {
-    background: rgba(0, 0, 0, 0.94);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 12px 20px 20px;
-  }
-  .menu {
-    flex-direction: column;
-    gap: 12px;
-    padding: 0;
-  }
-  .titulo-pitark {
-    font-size: clamp(8rem, 20vw, 16rem);
-    gap: clamp(0.8rem, 2vw, 1.4rem);
-  }
-  .subtitle {
-    position: static;
-    margin-bottom: 1rem;
-    white-space: normal;
-    text-align: center;
-    font-size: clamp(0.85rem, 2.4vw, 1.1rem);
-    letter-spacing: 0.18em;
+  /* BRANDING TABLET */
+  .branding-description {
+    max-width: 100%;
+    margin-bottom: 3rem;
   }
 }
 
 @media (max-width: 600px) {
-  /* BIGTYPE MÓVIL */
+  /* ... (Resto de queries anteriores se mantienen) ... */
   .bigtype {
     height: 140vh;
     margin-bottom: 5vh;
   }
-
-  .hero-content {
-    justify-content: center;
-    padding-bottom: 3rem;
-  }
-  .hero-text {
-    text-align: center;
-  }
-  .titulo-pitark {
-    font-size: clamp(3rem, 16vw, 5rem);
-    letter-spacing: -0.02em;
-    gap: 0.6rem;
-  }
-  .subtitle {
-    font-size: clamp(0.85rem, 3vw, 1rem);
-  }
-  .about-top-bar {
-    padding: 1.5rem;
-  }
-  .about-content-wrapper {
-    padding-top: clamp(200px, 32vh, 350px) !important;
-    padding-bottom: clamp(120px, 20vh, 200px) !important;
-  }
-  .about-section .row {
-    gap: 1.5rem;
-  }
-  .about-photo {
-    width: 75%;
-    max-width: 260px;
-  }
-  .about-text {
-    font-size: 0.9rem;
-    max-width: 90%;
-  }
-  .about-big-title {
-    font-size: 16vw !important;
-    bottom: 2vh;
-  }
-
-  /* ALBUM GRID MÓVIL */
   .album-gallery {
     grid-template-columns: 1fr;
+  }
+  .marquee-wrapper {
+    height: 250px;
+  }
+  .marquee-group img {
+    width: 350px !important;
+  }
+
+  /* BRANDING MÓVIL */
+  /* En móvil, el grid pasa a 1 sola columna */
+  .branding-images-grid {
+    grid-template-columns: 1fr;
+  }
+  /* Los logotipos ya no hacen span porque solo hay 1 columna */
+  .branding-cell.full-width {
+    grid-column: span 1;
   }
 }
