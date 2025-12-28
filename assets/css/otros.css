@@ -684,10 +684,10 @@ canvas {
   animation: marquee-scroll 30s linear infinite;
 }
 .marquee-anima {
-  animation-duration: 35s;
+  animation-duration: 10s;
 }
 .marquee-twinpeaks {
-  animation-duration: 40s;
+  animation-duration: 10s;
 }
 .marquee-wrapper:hover .marquee-track {
   animation-play-state: paused;
@@ -742,8 +742,6 @@ canvas {
 }
 .design3d-item {
   cursor: pointer;
-}
-.design3d-info {
 }
 
 /* ========== GALLERY SECTION========== */
