@@ -843,7 +843,7 @@ canvas {
   flex: 0.85 1 calc((100% - (5 * var(--gap))) / 6);
 }
 
-/* ========== CONTACT SECTION========== */
+/* ========== CONTACT SECTION ========== */
 .contact-section {
   position: relative;
   width: 100%;
@@ -854,15 +854,6 @@ canvas {
   color: #000;
   overflow: hidden;
 }
-.contact-photo-col {
-  height: 100%;
-}
-.contact-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
 .contact-content-col {
   height: 100%;
@@ -870,6 +861,7 @@ canvas {
   align-items: stretch;
   background: transparent;
 }
+
 .contact-inner {
   width: 100%;
   height: 100%;
@@ -878,6 +870,14 @@ canvas {
   justify-content: space-between;
   padding: clamp(1.2rem, 2.6vw, 3rem);
 }
+
+.contact-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
 .contact-small {
   font-weight: 500;
   font-size: 0.9rem;
@@ -886,12 +886,7 @@ canvas {
   line-height: 1;
   color: #000;
 }
-.contact-top {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
-  align-items: start;
-}
+
 .contact-title {
   margin: 0;
   font-weight: 800;
@@ -899,23 +894,35 @@ canvas {
   letter-spacing: -0.05em;
   line-height: 0.85;
   text-align: center;
-  font-size: clamp(3.5rem, 7.8vw, 7.2rem);
+  font-size: clamp(3.5rem, 10vw, 9rem);
   color: #000;
 }
+
 .contact-list {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.75rem, 1.2vw, 1.15rem);
-  padding-bottom: clamp(0.2rem, 0.8vw, 0.8rem);
+  align-items: center;
+  gap: clamp(1.5rem, 2vw, 2rem);
+  padding-bottom: clamp(1rem, 2vw, 2rem);
+  width: 100%;
 }
 
-/* FLUID: la “columna fija” se adapta entre 600-900 sin saltos */
 .contact-row {
-  display: grid;
-  grid-template-columns: clamp(95px, 16vw, 110px) 1fr;
-  gap: 1rem;
-  align-items: baseline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  border-bottom: none;
+  padding-bottom: 0;
+  flex-wrap: wrap;
+  text-align: center;
 }
+
+.contact-row:last-child {
+  border-bottom: none;
+}
+
 .contact-key,
 .contact-val {
   font-weight: 500;
@@ -925,19 +932,13 @@ canvas {
   color: #000;
   line-height: 1.2;
 }
-.contact-photo-mobile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: clamp(0.8rem, 2vw, 1.2rem) 0;
+
+.contact-key {
+  font-weight: 700;
+  min-width: auto;
+  text-align: right;
 }
-.contact-photo-mobile-img {
-  width: clamp(220px, 34vw, 320px);
-  height: auto;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  display: block;
-}
+
 .contact-link,
 .contact-link:visited,
 .contact-link:hover,
@@ -945,12 +946,17 @@ canvas {
   color: #000;
   text-decoration: none;
 }
+
 .contact-link:hover {
   opacity: 0.6;
   text-decoration: underline;
 }
 
-/* ========== BREAKPOINTS RESPONSIVE 900PX ========== */
+.contact-link {
+  text-align: left;
+}
+
+/* ========== RESPONSIVE 900PX ========== */
 @media (max-width: 900px) {
   .bigtype {
     height: 180vh;
@@ -997,7 +1003,7 @@ canvas {
   }
 }
 
-/* ========== BREAKPOINTS RESPONSIVE 600PX ========== */
+/* ========== RESPONSIVE 600PX ========== */
 @media (max-width: 600px) {
   .bigtype {
     height: 140vh;
