@@ -107,6 +107,20 @@ document.addEventListener("DOMContentLoaded", () => {
     closeAlbum();
   });
 
+  // ACCESIBILIDAD MODAL: cerrar con tecla esc
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document
+        .querySelectorAll(
+          ".fondo-modal.is-active, .album-modal-overlay.is-active"
+        )
+        .forEach((modal) => {
+          modal.classList.remove("is-active");
+          document.body.style.overflow = "";
+        });
+    }
+  });
+
   // GALLERY: activar/desactivar imágenes
   document.querySelectorAll("[data-gallery]").forEach((gallery) => {
     const items = gallery.querySelectorAll("[data-gallery-item]");
